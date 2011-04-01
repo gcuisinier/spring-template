@@ -19,7 +19,9 @@ package be.hikage.springtemplate;
 import org.junit.Test;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanCreationException;
+import org.springframework.beans.factory.support.RootBeanDefinition;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import static org.junit.Assert.*;
@@ -43,6 +45,10 @@ public class TemplateTest {
 
         assertTrue("Bean container-dev must be defined", context.containsBean("container-dev"));
         assertEquals(ContainerBean.class, context.getBean("container-dev").getClass());
+
+        ConfigurableApplicationContext listableBeanFactory = (ConfigurableApplicationContext) context;
+        RootBeanDefinition beanDefinition = (RootBeanDefinition) listableBeanFactory.getBeanFactory().getBeanDefinition("container-dev");
+        assertArrayEquals(new String[]{"simple-dev"}, beanDefinition.getDependsOn());
 
 
     }

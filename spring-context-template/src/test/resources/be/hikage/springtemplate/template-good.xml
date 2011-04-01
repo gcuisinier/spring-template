@@ -25,7 +25,7 @@
         <property name="propertyValue" value="propertyData.${env}"/>
         <property name="externalizedPropertyValue" value="${${env}.propertyValue}"/>
     </bean>
-    <bean name="container-${env}" class="be.hikage.springtemplate.ContainerBean">
+    <bean name="container-${env}" class="be.hikage.springtemplate.ContainerBean" depends-on="simple-${env}">
         <property name="bean" ref="simple-${env}"/>
         <property name="innerAnonymous">
 
@@ -36,5 +36,6 @@
 
         </property>
     </bean>
+
 
 </beans>

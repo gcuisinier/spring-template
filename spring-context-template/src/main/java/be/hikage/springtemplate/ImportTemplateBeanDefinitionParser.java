@@ -20,6 +20,7 @@ import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.BeanDefinitionVisitor;
 import org.springframework.beans.factory.parsing.BeanComponentDefinition;
 import org.springframework.beans.factory.parsing.CompositeComponentDefinition;
+import org.springframework.beans.factory.support.AbstractBeanDefinition;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.BeanDefinitionParser;
@@ -40,6 +41,7 @@ import java.util.Map;
  * {@code replacement} elements
  *
  * @author Gildas Cuisinier
+ * @author Stefan Isele
  */
 public class ImportTemplateBeanDefinitionParser implements BeanDefinitionParser {
 
@@ -154,5 +156,35 @@ public class ImportTemplateBeanDefinitionParser implements BeanDefinitionParser 
             return s;
 
         }
+
+        @Override
+        public void visitBeanDefinition(BeanDefinition beanDefinition) {
+
+            if (beanDefinition instanceof AbstractBeanDefinition) {
+                visitDependsOn((AbstractBeanDefinition) beanDefinition);
+
+            }
+            super.visitBeanDefinition(beanDefinition);
+        }
+
+
+        /**
+         * Replaces bean names in depends-on
+         *
+         * @param beanDefinition
+         */
+        private void visitDependsOn(AbstractBeanDefinition beanDefinition) {
+            String[] allDependsOn = beanDefinition.getDependsOn();
+            if (allDependsOn == null || allDependsOn.length == 0) {
+                return;
+            }
+            String[] allResolved = new String[allDependsOn.length];
+            for (int i = 0; i < allDependsOn.length; i++) {
+                allResolved[i] = resolveStringValue(allDependsOn[i]);
+            }
+            beanDefinition.setDependsOn(allResolved);
+        }
     }
+
+
 }

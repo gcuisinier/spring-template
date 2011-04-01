@@ -15,7 +15,8 @@
   ~ limitations under the License.
   -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <name>spring-context-template</name>
     <groupId>be.hikage</groupId>
@@ -61,6 +62,7 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.4</version>
+            <scope>test</scope>
         </dependency>
 
 
@@ -93,7 +95,7 @@
 
             <plugin>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>2.0</version>
+                <version>2.1</version>
                 <configuration>
                     <tagBase>https://spring-import-template.googlecode.com/svn/tags</tagBase>
                     <releaseProfiles>release</releaseProfiles>
@@ -129,10 +131,11 @@
             <extension>
                 <groupId>org.jvnet.wagon-svn</groupId>
                 <artifactId>wagon-svn</artifactId>
-                <version>1.8</version>
+                <version>1.9</version>
             </extension>
         </extensions>
     </build>
+
 
     <distributionManagement>
         <repository>
@@ -141,8 +144,6 @@
             <url>svn:https://spring-import-template.googlecode.com/svn/repo</url>
         </repository>
     </distributionManagement>
-
-    
 
 
 </project>
