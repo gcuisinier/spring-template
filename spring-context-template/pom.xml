@@ -15,19 +15,18 @@
   ~ limitations under the License.
   -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <name>spring-context-template</name>
     <groupId>be.hikage</groupId>
     <artifactId>spring-context-template</artifactId>
-    <version>0.2-SNAPSHOT</version>
+    <version>0.2</version>
 
     <scm>
-        <connection>scm:svn:http://spring-import-template.googlecode.com/svn/trunk/spring-context-template</connection>
-        <developerConnection>scm:svn:https://spring-import-template.googlecode.com/svn/trunk/spring-context-template/
+        <connection>scm:svn:http://spring-import-template.googlecode.com/svn/tags/spring-context-template-0.2</connection>
+        <developerConnection>scm:svn:https://spring-import-template.googlecode.com/svn/tags/spring-context-template-0.2
         </developerConnection>
-        <url>http://code.google.com/p/spring-import-template/source/browse/#svn/trunk/spring-context-template</url>
+        <url>http://code.google.com/p/spring-import-template/source/browse/#svn/tags/spring-context-template-0.2</url>
     </scm>
 
     <licenses>
