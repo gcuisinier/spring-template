@@ -66,7 +66,7 @@
     </developers>
 
     <issueManagement>
-        <system>GoogleCode Issues</system>
+        <system>GitHub Issues</system>
         <url>https://github.com/gcuisinier/spring-import-template/issues</url>
     </issueManagement>
 
@@ -106,13 +106,7 @@
     </build>
 
 
-    <distributionManagement>
-        <repository>
-            <uniqueVersion>false</uniqueVersion>
-            <id>googlecode</id>
-            <url>svn:https://spring-import-template.googlecode.com/svn/repo</url>
-        </repository>
-    </distributionManagement>
+
 
 
 </project>
