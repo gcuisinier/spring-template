@@ -54,6 +54,36 @@ public class TemplateTest {
     }
 
     @Test
+    public void testExternal() {
+
+        ApplicationContext context = new ClassPathXmlApplicationContext("test-config-good-external.xml", this.getClass());
+        assertTrue("Bean simple-dev must be defined", context.containsBean("simple-dev"));
+        assertEquals(SimpleBean.class, context.getBean("simple-dev").getClass());
+        SimpleBean simpleBean = (SimpleBean) context.getBean("simple-dev");
+
+        assertEquals("constructorData.dev", simpleBean.getConstructorValue());
+        assertEquals("ExternalizedConstructor", simpleBean.getExternalizedConstructorValue());
+
+        assertEquals("propertyData.dev", simpleBean.getPropertyValue());
+        assertEquals("ExternalizedProperty", simpleBean.getExternalizedPropertyValue());
+
+        assertNotNull(simpleBean.getObjectProperty());
+        assertEquals("java.lang.Object", simpleBean.getObjectProperty().getClass().getName());
+
+
+        assertTrue("Bean container-dev must be defined", context.containsBean("container-dev"));
+        assertEquals(ContainerBean.class, context.getBean("container-dev").getClass());
+
+        ConfigurableApplicationContext listableBeanFactory = (ConfigurableApplicationContext) context;
+        RootBeanDefinition beanDefinition = (RootBeanDefinition) listableBeanFactory.getBeanFactory().getBeanDefinition("container-dev");
+        assertArrayEquals(new String[]{"simple-dev"}, beanDefinition.getDependsOn());
+
+
+    }
+
+
+
+    @Test
     public void testBad() {
 
         try {

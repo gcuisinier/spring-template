@@ -29,6 +29,7 @@ public class SimpleBean {
     private String externalizedPropertyValue;
     private String constructorValue;
     private String externalizedConstructorValue;
+    private Object objectProperty;
 
     public String getConstructorValue() {
         return constructorValue;
@@ -65,5 +66,13 @@ public class SimpleBean {
 
     public void setExternalizedPropertyValue(String externalizedPropertyValue) {
         this.externalizedPropertyValue = externalizedPropertyValue;
+    }
+
+    public Object getObjectProperty() {
+        return objectProperty;
+    }
+
+    public void setObjectProperty(Object objectProperty) {
+        this.objectProperty = objectProperty;
     }
 }

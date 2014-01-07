@@ -24,6 +24,8 @@
         <constructor-arg value="${${env}.constructorValue}"/>
         <property name="propertyValue" value="propertyData.${env}"/>
         <property name="externalizedPropertyValue" value="${${env}.propertyValue}"/>
+        <property name="objectProperty" ref="myExternalBean"/>
+
     </bean>
     <bean name="container-${env}" class="be.hikage.springtemplate.ContainerBean" depends-on="simple-${env}">
         <property name="bean" ref="simple-${env}"/>

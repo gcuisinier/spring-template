@@ -17,7 +17,7 @@
 
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:hikage="http://www.hikage.be/schema/import-template"
+       xmlns:template="http://www.hikage.be/schema/import-template"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.hikage.be/schema/import-template http://www.hikage.be/schema/import-template/import-template.xsd">
 
@@ -26,9 +26,10 @@
     </bean>
 
 
-    <hikage:import-template location="classpath:be/hikage/springtemplate/template-good.xml">
-        <hikage:variable name="env" value="dev"/>
-    </hikage:import-template>
+    <bean id="myExternalBean" class="java.lang.Object"/>
+    <template:import-template location="classpath:be/hikage/springtemplate/template-good-externalreference.xml">
+        <template:variable name="env" value="dev"/>
+    </template:import-template>
 
 
 </beans>
