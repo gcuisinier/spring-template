@@ -15,19 +15,32 @@
   ~ limitations under the License.
   -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <name>spring-context-template</name>
     <groupId>be.hikage</groupId>
-    <artifactId>spring-context-template</artifactId>
+    <artifactId>spring-template</artifactId>
     <version>0.3-SNAPSHOT</version>
 
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
+
+    <name>spring-template</name>
+    <url>https://github.com/gcuisinier/spring-import-template</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
     <scm>
-        <connection>scm:svn:http://spring-import-template.googlecode.com/svn/trunk/spring-context-template</connection>
-        <developerConnection>scm:svn:https://spring-import-template.googlecode.com/svn/trunk/spring-context-template/
-        </developerConnection>
-        <url>http://code.google.com/p/spring-import-template/source/browse/#svn/trunk/spring-context-template</url>
+        <url>https://github.com/gcuisinier/spring-import-template</url>
+        <connection>scm:git:git@github.com:gcuisinier/spring-import-template.git</connection>
+        <developerConnection>scm:git:git@github.com:gcuisinier/spring-import-template.git</developerConnection>
     </scm>
+
 
     <licenses>
         <license>
@@ -39,14 +52,22 @@
 
     <developers>
         <developer>
+            <id>gcuisinier</id>
             <name>Gildas Cuisinier</name>
-            <email>hikage+code@hikage.be</email>
+            <email>gildas.cuisinier@gmail.com</email>
+            <url>http://www.hikage.be</url>
+            <organization>Sfeir Benelux</organization>
+            <organizationUrl>http://www.sfeir.lu</organizationUrl>
+            <roles>
+                <role>developer</role>
+            </roles>
         </developer>
+
     </developers>
 
     <issueManagement>
         <system>GoogleCode Issues</system>
-        <url>http://code.google.com/p/spring-import-template/issues/list</url>
+        <url>https://github.com/gcuisinier/spring-import-template/issues</url>
     </issueManagement>
 
 
@@ -72,67 +93,16 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.0.2</version>
+                <version>3.1</version>
                 <configuration>
                     <source>1.5</source>
                     <target>1.5</target>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>2.0.4</version>
-                <executions>
-                    <execution>
-                        <phase>install</phase>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
 
-            <plugin>
-                <artifactId>maven-release-plugin</artifactId>
-                <version>2.1</version>
-                <configuration>
-                    <tagBase>https://spring-import-template.googlecode.com/svn/tags</tagBase>
-                    <releaseProfiles>release</releaseProfiles>
-                    <goals>deploy gcupload:gcupload</goals>
-                </configuration>
-
-            </plugin>
-
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-deploy-plugin</artifactId>
-                <version>2.5</version>
-            </plugin>
-            <plugin>
-                <groupId>org.riedelcastro</groupId>
-                <artifactId>gcupload-maven-plugin</artifactId>
-                <version>0.9</version>
-                <configuration>
-                    <projectName>spring-import-template</projectName>
-                    <uploads>
-                        <upload>
-                            <extensions>jar</extensions>
-                            <labels>Type-Library,Featured</labels>
-                            <summary>My Library</summary>
-                        </upload>
-                    </uploads>
-                </configuration>
-            </plugin>
 
         </plugins>
-        <extensions>
-            <extension>
-                <groupId>org.jvnet.wagon-svn</groupId>
-                <artifactId>wagon-svn</artifactId>
-                <version>1.9</version>
-            </extension>
-        </extensions>
+
     </build>
 
 
