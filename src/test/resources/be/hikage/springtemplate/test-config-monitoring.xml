@@ -17,22 +17,22 @@
 
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:hikage="http://www.hikage.be/schema/import-template"
+       xmlns:template="http://gcuisinier.github.io/spring-template"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.hikage.be/schema/import-template http://www.hikage.be/schema/import-template/import-template.xsd">
+         http://gcuisinier.github.io/spring-template http://gcuisinier.github.io/spring-template/schema/spring-template.xsd">
 
 
-    <hikage:import-template location="classpath:be/hikage/springtemplate/template-monitoring.xml">
-        <hikage:variable name="server" value="localhost"/>
-    </hikage:import-template>
+    <template:import-template location="classpath:be/hikage/springtemplate/template-monitoring.xml">
+        <template:variable name="server" value="localhost"/>
+    </template:import-template>
 
-    <hikage:import-template location="classpath:be/hikage/springtemplate/template-monitoring.xml">
-        <hikage:variable name="server" value="hikage.be"/>
-    </hikage:import-template>
+    <template:import-template location="classpath:be/hikage/springtemplate/template-monitoring.xml">
+        <template:variable name="server" value="hikage.be"/>
+    </template:import-template>
 
-    <hikage:import-template location="classpath:be/hikage/springtemplate/template-monitoring.xml">
-        <hikage:variable name="server" value="google.com"/>
-    </hikage:import-template>
+    <template:import-template location="classpath:be/hikage/springtemplate/template-monitoring.xml">
+        <template:variable name="server" value="google.com"/>
+    </template:import-template>
 
 
 </beans>

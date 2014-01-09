@@ -19,7 +19,7 @@
 <xsd:schema xmlns="http://www.springframework.org/schema/beans"
             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
             xmlns:tool="http://www.springframework.org/schema/tool"
-            targetNamespace="http://www.hikage.be/schema/import-template"
+            targetNamespace="http://gcuisinier.github.io/spring-template"
             elementFormDefault="qualified">
 
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>

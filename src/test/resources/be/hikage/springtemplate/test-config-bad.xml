@@ -17,14 +17,14 @@
 
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:hikage="http://www.hikage.be/schema/import-template"
+       xmlns:template="http://gcuisinier.github.io/spring-template"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.hikage.be/schema/import-template http://www.hikage.be/schema/import-template/import-template.xsd">
+         http://gcuisinier.github.io/spring-template http://gcuisinier.github.io/spring-template/schema/spring-template.xsd">
 
 
-    <hikage:import-template location="classpath:be/hikage/springtemplate/template-illegalname.xml">
-        <hikage:variable name="env" value="dev"/>
-    </hikage:import-template>
+    <template:import-template location="classpath:be/hikage/springtemplate/template-illegalname.xml">
+        <template:variable name="env" value="dev"/>
+    </template:import-template>
 
 
 </beans>
